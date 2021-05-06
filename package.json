@@ -1,26 +1,27 @@
 {
-  "name": "books",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pvtpyro/books.git"
-  },
-  "author": "Brandi Flynn",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/pvtpyro/books/issues"
-  },
-  "homepage": "https://github.com/pvtpyro/books#readme",
-  "dependencies": {
-    "bootstrap": "5.0.0-beta3",
-    "chalk": "4.1.1",
-    "debug": "4.3.1",
-    "express": "^4.17.1",
-    "morgan": "1.10.0"
-  }
+	"name": "books",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"start": "set DEBUG=app & node app.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/pvtpyro/books.git"
+	},
+	"author": "Brandi Flynn",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/pvtpyro/books/issues"
+	},
+	"homepage": "https://github.com/pvtpyro/books#readme",
+	"dependencies": {
+		"bootstrap": "5.0.0-beta3",
+		"chalk": "4.1.1",
+		"debug": "4.3.1",
+		"express": "^4.17.1",
+		"morgan": "1.10.0"
+	}
 }
