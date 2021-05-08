@@ -1,0 +1,48 @@
+<%- include('../inc/head'); %>
+<%- include('../inc/nav'); %>
+
+<header class="p-5 rounded bg-dark text-light mb-5">
+	<div class="container">
+		<h1 class="display-4">
+			<%=title%>
+		</h1>
+	</div>
+</header>
+
+<div class="container">
+
+	<div class="card">
+		<div class="card-body">
+
+			<%for(let i=0; i<books.length; i++) {%>
+				<div class="row">
+					<div class="col-md-auto">
+						<a class="story-title" href="javascript:void(0)" class="ml-auto">
+							<img alt="random user image" src="http://api.randomuser.me/portraits/thumb/men/<%= i %>.jpg" style="width:100px;height:100px"  class="rounded-circle mb-4">
+						</a>
+					</div>
+					<div class="col-md offset-md-1">
+						<h2 class="display-5">
+							<%=books[i].title%>
+						</h2>
+						<div class="badge bg-dark h6 mr-3">
+							<%=books[i].author%>
+						</div>
+						<small class="text-muted font-monospace">
+							2 hours ago •
+							<a href="/books/<%=i%>">Read More</a>
+						</small>
+					</div>
+				</div>
+				<hr>
+				<%}%>
+
+				<a href="/" class="btn btn-dark">More <i class="fas fa-chevron-right"></i></a>
+
+		</div>
+	</div>
+
+</div>
+
+
+<%- include('../inc/foot'); %>

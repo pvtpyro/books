@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap');
+body {
+	color: #646464;
+	background-color: #efefef;
+}
+
+h1,
+h2,
+h3,
+.navbar a {
+	font-family: 'Oswald', arial narrow, sans-serif;
+}
+
+a {
+	text-decoration: none;
+	transition: color 300ms;
+}
+
+a:hover, 
+a:active, 
+a:focus {
+	color: #223344;
+	text-decoration: none;
+}
