@@ -9,7 +9,7 @@ function router(nav) {
 		.get((req, res) => {
 
 			connection.query('SELECT * from books', function (err, rows, fields) {
-				if (err) throw err
+				if (err) throw err;
 
 				// debug(fields)
 				res.render(
