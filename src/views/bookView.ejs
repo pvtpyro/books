@@ -17,7 +17,7 @@
 				<%//- JSON.stringify(book).replace(/\\/g, '\\\\') %>
 				<div class="col-md-auto">
 					<a class="story-title" href="javascript:void(0)">
-						<img alt="random user image" src="http://api.randomuser.me/portraits/thumb/women/74.jpg" style="width:100px;height:100px" class="rounded-circle mb-4">
+						<img alt="random user image" src="http://api.randomuser.me/portraits/thumb/women/33.jpg" style="width:100px;height:100px" class="rounded-circle mb-4">
 					</a>
 				</div>
 				<div class="col-md offset-md-1">
@@ -31,6 +31,9 @@
 								</span>
 						</div>
 						<div class="col-xs-3"></div>
+						<% if (book.details.description) { %>
+							<%= book.details.description %>
+						<% } %>
 					</div>
 				</div>
 			</div>

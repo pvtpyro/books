@@ -1,7 +1,7 @@
 const connection = require('../../services/connection');
 const debug = require('debug')('app:bookController');
 
-function bookController(nav) {
+function bookController(bookService, nav) {
 
 	function getIndex(req, res) {
 		connection.query('SELECT * from books', function (err, rows, fields) {
@@ -20,16 +20,18 @@ function bookController(nav) {
 	function getById(req, res) {
 		// TOOD: if no book, show 404
 		const { id } = req.params;
-			connection.query(`SELECT * from books where id = ?`, id, function (err, rows, fields) {
-				if (err) throw err
-				debug(rows)
-				req.book = rows;
+			connection.query(`SELECT * from books where id = ? LIMIT 1`, id, async function (err, rows, fields) {
+				if (err) throw err;
+
+				const book = rows[0];
+				book.details = await bookService.getBookById(book.ol_id);
+				debug(book);
 				res.render(
-					'bookListView',
+					'bookView',
 					{
 						nav,
 						title: 'Library',
-						books: req.book
+						book
 					}
 				);
 			});
@@ -38,11 +40,11 @@ function bookController(nav) {
 	}
 
 	function middleware(req, res, next) {
-		if (req.user) {
+		// if (req.user) {
 			next();
-		} else {
-			res.redirect('/')
-		}
+		// } else {
+			// res.redirect('/')
+		// }
 	}
 
 	return {
